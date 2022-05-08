@@ -23,7 +23,7 @@ public class Main {
     }
     public static void lehetosegek(){
         int i = 0;
-        out.println("\nLehetőségek: \n1: Betegek listázása.\n2: Beteg felvétele.\n3: Beteg levétele.\n4: Módosítás\n5: Mentés.\n6: Mentés és Kilépés.\n");
+        out.println("\nLehetőségek: \n1: Betegek listázása.\n2: Beteg felvétele.\n3: Beteg levétele.\n4: Módosítás.\n5: Keresés.\n6: Mentés.\n7: Mentés és Kilépés.\n");
         out.print("A Döntés: ");
         i = sc.nextInt();
         switch (i) {
@@ -31,9 +31,16 @@ public class Main {
             case 2: hozzaad();
             case 3: torles();
             case 4: frissites();
-            case 5: savePatientsToXml(betegek, "src/main/resources/patients.xml");
-            case 6: kilepes = 65; savePatientsToXml(betegek, "src/main/resources/patients.xml");
+            case 5: kereses();
+            case 6: savePatientsToXml(betegek, "src/main/resources/patients.xml");
+            case 7: kilepes = 65; savePatientsToXml(betegek, "src/main/resources/patients.xml");
+            default: out.println("\nA LEHETŐSÉGEK KÖZÜL KELL VÁLASZTANI!\n");enter();lehetosegek();
         }
+    }
+    public static void enter(){
+        System.out.println("Nyomja le az ENTER-t a folytatáshoz...");
+        try{System.in.read();}
+        catch(Exception e){}
     }
     public static void listazas(){
         int i = 0;
@@ -43,16 +50,18 @@ public class Main {
             out.println("Azonosítója: " + beteg.getTaj() + "\nNeve: " + beteg.getName()+ "\nSzületésnapja: " + beteg.getBirthYear() + "\nKezelés kezdete: " + beteg.getKezeleskezdete() +"\nBetegségének neve: " + beteg.getBetegsegneve() + "\n");
             i++;
         }
+        enter();
         lehetosegek();
     }
     public static void hozzaad(){
         out.print("");
         String miert = sc.nextLine();
+        //ezekre az üres bekérésekre gondoltam a readme-ben
         out.print("Beteg azonosítója: ");
         String taj = sc.nextLine();
         out.print("Beteg neve: ");
         String nev = sc.nextLine();
-        out.print("Beteg születésnapja: ");
+        out.print("Beteg születési dátum: ");
         String by = sc.nextLine();
         out.print("Beteg kezelésének kezdete: ");
         String kezd = sc.nextLine();
@@ -61,6 +70,7 @@ public class Main {
         patient beteg = new patient(taj, nev, by, kezd, betegseg);
         betegek.add(beteg);
         out.println("\nBETEG SIKERESEN FELVÉVE!\n");
+        enter();
         lehetosegek();
     }
     public static void torles(){
@@ -68,19 +78,27 @@ public class Main {
         String miert = sc.nextLine();
         out.println("Eltávolítandó beteg azonosítója: ");
         String i = sc.nextLine();
+        int k = 0;
         for(int j = 0; j < betegek.size(); j++){
             if(betegek.get(j).getTaj().equals(i)){
                 betegek.remove(j);
+                k = 1;
+                out.println("\nBETEG SIKERESEN ELTÁVOLÍTVA!\n");
+                enter();
+                lehetosegek();
+            }
+            else if(j == (betegek.size()-1) && k != 1){
+                out.println("\nBETEG SIKERTELENÜL ELTÁVOLÍTVA!\n");
+                enter();
+                lehetosegek();
             }
         }
-        out.println("\nBETEG SIKERESEN ELTÁVOLÍTVA!\n");
-        lehetosegek();
     }
     public static void frissites(){
         out.print("\nFrissítendő beteg sorszáma: ");
         int i = sc.nextInt() - 1;
         patient beteg = betegek.get(i);
-        out.print("\nA beteg frissítendő adata: \n 1: Azonosítója\n 2: Neve\n 3: Születésnapja\n 4: Kezelés kezdete\n 5: Betegségének neve\n");
+        out.print("\nA beteg frissítendő adata: \n 1: Azonosítója\n 2: Neve\n 3: Születési dátum\n 4: Kezelés kezdete\n 5: Betegségének neve\n");
         int j = sc.nextInt();
         switch (j){
             case 1: frissitesid(beteg);
@@ -96,6 +114,7 @@ public class Main {
         out.print("A módosítás: ");
         String b = sc.nextLine();
         beteg.setTaj(b);
+        enter();
         lehetosegek();
     }
     public static void frissitesnev(patient beteg){
@@ -104,6 +123,7 @@ public class Main {
         out.print("A módosítás: ");
         String b = sc.nextLine();
         beteg.setName(b);
+        enter();
         lehetosegek();
     }
     public static void frissitesszuli(patient beteg){
@@ -112,6 +132,7 @@ public class Main {
         out.print("A módosítás: ");
         String b = sc.nextLine();
         beteg.setBirthYear(b);
+        enter();
         lehetosegek();
     }
     public static void frissiteskezd(patient beteg){
@@ -120,6 +141,7 @@ public class Main {
         out.print("A módosítás: ");
         String b = sc.nextLine();
         beteg.setKezeleskezdete(b);
+        enter();
         lehetosegek();
     }
     public static void frissitessugma(patient beteg){
@@ -128,6 +150,27 @@ public class Main {
         out.print("A módosítás: ");
         String b = sc.nextLine();
         beteg.setBetegsegneve(b);
+        enter();
+        lehetosegek();
+    }
+    public static void kereses(){
+        out.print("");
+        String miert = sc.nextLine();
+        out.println("Keresett beteg azonosítója: ");
+        String i = sc.nextLine();
+        int k = 0;
+        for(int j = 0; j < betegek.size(); j++){
+            if(betegek.get(j).getTaj().equals(i)){
+                k = 1;
+                patient beteg = betegek.get(j);
+                out.print("\nBETEG MEGTALÁLVA!\n");
+                out.println("\nAzonosítója: " + beteg.getTaj() + "\nNeve: " + beteg.getName()+ "\nSzületési dátum: " + beteg.getBirthYear() + "\nKezelés kezdete: " + beteg.getKezeleskezdete() +"\nBetegségének neve: " + beteg.getBetegsegneve() + "\n");
+            }
+            else if(j == (betegek.size()-1) && k != 1){
+                out.printf("\nA KERESETT BETEG NINCS A LISTÁN!\n");
+            }
+        }
+        enter();
         lehetosegek();
     }
 
@@ -181,7 +224,7 @@ public class Main {
 
                 createChildElement(document, beteg1, "taj", beteg.getTaj());
                 createChildElement(document, beteg1, "name", beteg.getName());
-                createChildElement(document, beteg1, "bearthYear",beteg.getBirthYear());
+                createChildElement(document, beteg1, "birthYear",beteg.getBirthYear());
                 createChildElement(document, beteg1, "kezeleskezdete",beteg.getKezeleskezdete());
                 createChildElement(document, beteg1, "betegsegneve", beteg.getBetegsegneve());
             }
@@ -202,9 +245,10 @@ public class Main {
         }
         out.println("\nSIKERES MENTÉS!\n");
         if(kilepes == 65){
-            System.exit(69);
+            System.exit(68);
         }
         else {
+            enter();
             lehetosegek();
         }
     }
@@ -215,4 +259,3 @@ public class Main {
         parent.appendChild(element);
     }
 }
-
