@@ -21,8 +21,7 @@ public class Main{
 	}
 
 	lehetosegek(){
-	Létrehoztam egy "i" változót, ami a switchnek kell majd.
-	Kiírja a lehetőségeinket és vár egy bevitelt, ami eldönti mi következik. Amikor a mainben csináltam a switchet, akkor semmi gond nem volt, viszont miután áttettem egy külön metódusba, általam ismeretlen okoból, átugrott egy adatbevitelt, szóval ahol egy üres kiírás és egy biveitel van, ott ez van orvosolva. Próbálkoztam breakkel, de nem igazán szeretett volna úgy sem működni sajnos.
+	Eredetileg egy switch-csel volt megoldva ez a menü rendszer, viszont úgy nem tudtam kiküszöbölni a problémát, hogy mi van akkor, ha esetleg a felhasználó betű karaktert ad meg, ezért if-fel lett ez helyettesítve.
 }
 
 	enter(){
@@ -41,7 +40,7 @@ public class Main{
 }
 
 	frissites(){
-	Azonosító alapján lehet keresni a beteget és ha nem találja, akkor sincsen semmi probléma, eredetileg sorszámmal volt megoldva ez a metódus. Switch-csel dönthetünk a frissítendő attribútumról. Itt is előjön a switches dolog, hogy bevitelt ugrik, ezért ugyanazzal orvosoltam a problémát.
+	Azonosító alapján lehet keresni a beteget és ha nem találja, akkor sincsen semmi probléma, eredetileg sorszámmal volt megoldva ez a metódus. Eredetileg itt is switch-et használtam, viszont hasonló problémába ütköztem mint a menüben, ezért váltottam az if erdőre, amivel teljesen jól működik a metódus és még rá is szól a felhasználóra, hogyha esetleg nem megfelelő volt a döntése.
 }
 	
 	kereses(){
