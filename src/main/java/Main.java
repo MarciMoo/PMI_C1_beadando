@@ -23,7 +23,7 @@ public class Main {
     }
     public static void lehetosegek(){
         out.println("\nLehetőségek: \n1: Betegek listázása.\n2: Beteg felvétele.\n3: Beteg törlése.\n4: Módosítás.\n5: Keresés.\n6: Mentés.\n7: Mentés és Kilépés.\n");
-        out.print("A Döntés: ");
+        out.print("Választás: ");
         String a = sc.nextLine();
         if(a.equals("1")){
             listazas();
