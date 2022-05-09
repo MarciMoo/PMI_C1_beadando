@@ -12,6 +12,7 @@ Ha választottunk, mit szeretnénk csinálni, akkor a switch elindítja azt a me
 A program részletes leírása:
 
 (intellij-ben nem lehet console-t törölni)
+(nem tudom mennyire probléma, ha többször nem "commit and push"-oltam, mert valamiért amikor a nyilacskára mentem felül, akkor mindig csak letölteni akarta az előzőt, szóval inkább a kódot másoltam be ide)
 
 public class Main{
 	A main classban létrehoztam egy változót, ami egy boolean-ként működik, de integer, mivel azokban jobban bízok. Ezután olvassa be egy arraylistbe az elemeket a beolvasó metódus, ami egyébként sokkal eredményesebben olvas be, ha nem ejtünk benne helyesírás problémákat. Az órai beolvasó metódust alakítottam át, hogy ehhez a programhoz működjön.
