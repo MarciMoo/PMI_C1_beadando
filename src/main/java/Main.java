@@ -151,7 +151,7 @@ public class Main {
                 }
             }
             else if(j == (betegek.size()-1) && k != 1){
-                out.println("\nBETEG SIKERTELENÜL MÓDOSÍTVA!\nNINCS TALÁLAT A BETEGRE\n");
+                out.println("\nBETEG SIKERTELENÜL MÓDOSÍTVA!\nNINCS TALÁLAT A BETEGRE.\n");
                 enter();
                 lehetosegek();
             }
