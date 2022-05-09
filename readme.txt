@@ -41,7 +41,7 @@ public class Main{
 }
 
 	frissites(){
-	Itt is azonosító alapján akartam keresni beteget, viszont nem sikerült megoldanom, hogy úgy működjön ami elfogadható lenne, ezért itt sorszámot kell megadni, ami a listázásnál kiderül a betegenként (és reméljük, hogy helyes lesz a megadott sorszám). Switch-csel dönthetünk a frissítendő attribútumról. Itt is előjön a switches dolog, hogy bevitelt ugrik, ezért ugyanazzal orvosoltam a problémát.
+	Azonosító alapján lehet keresni a beteget és ha nem találja, akkor sincsen semmi probléma, eredetileg sorszámmal volt megoldva ez a metódus. Switch-csel dönthetünk a frissítendő attribútumról. Itt is előjön a switches dolog, hogy bevitelt ugrik, ezért ugyanazzal orvosoltam a problémát.
 }
 	
 	kereses(){
@@ -52,5 +52,3 @@ public class Main{
 	Órai munkából lett átdolgozva, hogy ezeket a fájlokat és adatokat tudják kezelni.
 } 
 }
-
-
