@@ -22,7 +22,7 @@ public class Main{
 	}
 
 	lehetosegek(){
-	Eredetileg egy switch-csel volt megoldva ez a menü rendszer, viszont úgy nem tudtam kiküszöbölni a problémát, hogy mi van akkor, ha esetleg a felhasználó betű karaktert ad meg, ezért if-fel lett ez helyettesítve.
+	Eredetileg egy switch-csel volt megoldva ez a menü rendszer, viszont úgy nem tudtam kiküszöbölni a problémát, hogy mi van akkor, ha esetleg a felhasználó betű karaktert ad meg, ezért if-fel lett ez helyettesítve. Illetve a switch-nél mindig átugrott egy bekérést a következő metódusban, amit breakkel nem sikerül megoldanom.
 }
 
 	enter(){
