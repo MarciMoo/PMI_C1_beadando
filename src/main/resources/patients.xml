@@ -35,4 +35,11 @@
         <kezeleskezdete>2019.11.14.</kezeleskezdete>
         <betegsegneve>Replikáns</betegsegneve>
     </beteg>
+    <beteg>
+        <taj>65</taj>
+        <name>mitski</name>
+        <birthYear>1921.02.10.</birthYear>
+        <kezeleskezdete>2022.04.01.</kezeleskezdete>
+        <betegsegneve>big szomor</betegsegneve>
+    </beteg>
 </betegek>
