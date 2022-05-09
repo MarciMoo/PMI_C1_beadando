@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<betegek>
+    <beteg>
+        <taj>331</taj>
+        <name>ibbi</name>
+        <birthYear>1999.09.19.</birthYear>
+        <kezeleskezdete>2022.02.30.</kezeleskezdete>
+        <betegsegneve>ligma</betegsegneve>
+    </beteg>
+    <beteg>
+        <taj>16</taj>
+        <name>Kapitány Máté István</name>
+        <birthYear>1998.03.14.</birthYear>
+        <kezeleskezdete>2022.04.01.</kezeleskezdete>
+        <betegsegneve>Malus domestica</betegsegneve>
+    </beteg>
+    <beteg>
+        <taj>42</taj>
+        <name>Bulcsú</name>
+        <birthYear>1981.12.06.</birthYear>
+        <kezeleskezdete>2022.03.29.</kezeleskezdete>
+        <betegsegneve>tuberculosis</betegsegneve>
+    </beteg>
+    <beteg>
+        <taj>15</taj>
+        <name>Vellinger Mihály</name>
+        <birthYear>2000.03.25.</birthYear>
+        <kezeleskezdete>2021.11.25.</kezeleskezdete>
+        <betegsegneve>psychosis - köznyelven: elmebaj</betegsegneve>
+    </beteg>
+    <beteg>
+        <taj>43</taj>
+        <name>Rick Deckard</name>
+        <birthYear>2015.07.04.</birthYear>
+        <kezeleskezdete>2019.11.14.</kezeleskezdete>
+        <betegsegneve>Replikáns</betegsegneve>
+    </beteg>
+    <beteg>
+        <taj>65</taj>
+        <name>mitski</name>
+        <birthYear>1921.02.10.</birthYear>
+        <kezeleskezdete>2022.04.01.</kezeleskezdete>
+        <betegsegneve>big szomor</betegsegneve>
+    </beteg>
+</betegek>
